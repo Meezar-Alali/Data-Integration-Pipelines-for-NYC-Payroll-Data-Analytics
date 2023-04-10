@@ -1,0 +1,44 @@
+{
+	"name": "Pipeline Aggregate data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Pipeline Aggregate data",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Dataflow Aggregate Data",
+						"type": "DataFlowReference",
+						"parameters": {
+							"dataflow_param_fiscalyear": "2020"
+						}
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_Azure_storage_fs",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-meezar-alali/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-04-10T16:21:30Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

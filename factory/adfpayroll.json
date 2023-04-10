@@ -1,0 +1,9 @@
+{
+	"name": "adfpayroll",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "45cdbed5-29c1-4257-9c75-ccd7e507bc67",
+		"tenantId": "a11586b1-4688-409c-a36d-b6b31802cc29"
+	}
+}
